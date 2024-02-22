@@ -60,6 +60,8 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: dist-files
+      - name: Install dependencies
+        run: npm ci
       - name: output contents
         run: ls dist/
       - name: get output
