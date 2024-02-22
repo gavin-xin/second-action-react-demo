@@ -4,6 +4,9 @@ on:
     types:
       - opened
   workflow_dispatch:
+  push:
+    branches:    
+      - main
 jobs:
   test:
     runs-on: ubuntu-latest
