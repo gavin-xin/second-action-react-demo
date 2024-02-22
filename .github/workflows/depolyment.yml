@@ -68,7 +68,7 @@ jobs:
       - name: output contents
         run: ls dist/
       - name: echo env
-        run: echo "DATABASE_NAME: $DATABASE_NAME"
+        run: 'echo "DATABASE_NAME\: $DATABASE_NAME"'
       - name: get output
         run: echo "${{ needs.test.outputs.script-file }}"
       - name: Deploy
