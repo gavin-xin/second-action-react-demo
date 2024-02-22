@@ -44,7 +44,7 @@ jobs:
   deploy:
     env:
       DATABASE_NAME: test
-      DATABASE_PAWSSORD: test
+      DATABASE_PAWSSORD: ${{ secrets.DATABASE_PAWSSORD }}
     needs: test
     runs-on: ubuntu-latest
     steps:
@@ -68,7 +68,9 @@ jobs:
       - name: output contents
         run: ls dist/
       - name: echo env
-        run: 'echo "DATABASE_NAME\: $DATABASE_NAME"'
+        run: |
+          echo "DATABASE_NAME: $DATABASE_NAME"
+          echo "DATABASE_PAWSSORD: $DATABASE_PAWSSORD"
       - name: get output
         run: echo "${{ needs.test.outputs.script-file }}"
       - name: Deploy
