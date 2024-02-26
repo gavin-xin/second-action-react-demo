@@ -82,6 +82,8 @@ jobs:
         run: echo "${{ needs.test.outputs.script-file }}"
       - name: Deploy
         run: echo "deploying"
+  reusing:
+    uses: ./.github/workflow/reusable.yml
 
 
 
