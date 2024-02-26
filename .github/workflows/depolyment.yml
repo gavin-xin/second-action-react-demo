@@ -83,7 +83,7 @@ jobs:
       - name: Deploy
         run: echo "deploying"
   reusing:
-    uses: ./.github/workflow/reusable.yml
+    uses: ./.github/workflows/reusable.yml
 
 
 
