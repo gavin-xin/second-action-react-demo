@@ -7,9 +7,15 @@ on:
         required: false
         type: string
         default: dist
+    outputs:
+      result: 
+        description: export result
+        value: ${{jobs.deploy.outputs.outcome}}
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    outputs:
+      outcome: ${{ steps.export.outputs.outcome }}
     steps:
       - name: download artifact
         uses: actions/download-artifact@v3
@@ -19,3 +25,6 @@ jobs:
         run: ls 
       - name: output information
         run: echo "deploying"
+      - name: export outputs
+        id: export
+        run: echo "outcome=success" > $GITHUB_OUTPUT
