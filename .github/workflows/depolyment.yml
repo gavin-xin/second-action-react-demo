@@ -54,6 +54,8 @@ jobs:
       DATABASE_PAWSSORD: ${{ secrets.DATABASE_PAWSSORD }}
     needs: test
     runs-on: ubuntu-latest
+    container:
+      image: node:16
     steps:
       - name: Get code
         uses: actions/checkout@v4
