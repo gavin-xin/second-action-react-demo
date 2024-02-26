@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: download artifact
-        uses: actions/dowload-artifact@v3
+        uses: actions/download-artifact@v3
         with: 
           name: ${{inputs.artifact-name}}
       - name: list files
