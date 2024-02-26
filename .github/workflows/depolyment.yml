@@ -12,6 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       script-file:  ${{steps.publish.outputs.file-name}}
+    services:
+      mongodb:
+        image: mongo
+        env:
+          MONGO_INITDB_ROOT_USERNAME: root
+          MONGO_INITDB_ROOT_PASSWORD: example
     steps:
       - name: Get code
         uses: actions/checkout@v4
