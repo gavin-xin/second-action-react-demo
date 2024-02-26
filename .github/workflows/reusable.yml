@@ -2,7 +2,7 @@ name: Reusable workflow
 on: workflow_call
 jobs:
   deploy:
-    runs-on: ubuntu_latest
+    runs-on: ubuntu-latest
     steps:
       - name: output information
         run: echo "deploying"
