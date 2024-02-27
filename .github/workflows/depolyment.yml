@@ -35,9 +35,13 @@ jobs:
         run: npm run test
       - name: upload test report
         uses: actions/upload-artifact@v3
+        id: caching
         with:
           name: test-report
           path: test.json
+      - name: ouput information
+        run: |
+          echo "caching name ${{steps.caching.outputs.name}}"
       - name: build website
         run: npm run build
       - name: publish output
