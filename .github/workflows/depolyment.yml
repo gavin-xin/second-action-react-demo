@@ -105,6 +105,8 @@ jobs:
   javascript:
     runs-on: ubuntu-latest
     steps:
+      - name: Get code
+        uses: actions/checkout@v4
       - name: Run java script action
         uses: ./.github/actions/deploy-s3-javascript
 
