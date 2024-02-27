@@ -8,9 +8,10 @@ function run() {
     const bucketRegion = core.getInput('bucket-region', { required: true })
     const folder = core.getInput('dist-folder', { required: true })
 
+
     //upload files
     exec.exec(`echo "uploading ${folder} to ${bucketRegion}/${bucketName}" ...`)
-    exec.exec(`echo $AWS_ACCESS_KEY : $AWS_SECURITY_KEY`)
+    exec.exec(`echo "$AWS_ACCESS_KEY : $AWS_SECURITY_KEY"`)
 
     core.notice('hello from my javascript action !!!')
 
