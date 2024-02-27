@@ -109,6 +109,10 @@ jobs:
         uses: actions/checkout@v4
       - name: Run java script action
         uses: ./.github/actions/deploy-s3-javascript
+        with:
+          bucket-name:  tf-gavin-test-ghr
+          bucket-region: ap-northeast-1
+          dist-folder: test
 
 
 
