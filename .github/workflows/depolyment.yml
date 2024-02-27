@@ -41,7 +41,7 @@ jobs:
           path: test.json
       - name: ouput information
         run: |
-          echo "caching name ${{steps.caching.outputs.name}}"
+          echo "caching name ${{steps.caching.outputs.used-cache}}"
       - name: build website
         run: npm run build
       - name: publish output
