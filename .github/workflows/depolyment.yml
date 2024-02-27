@@ -27,21 +27,21 @@ jobs:
           node-version: 18
       - name: load & cahce dependencies
         uses: ./.github/actions/cache-deps
+        id: caching
         with:
           caching: 'false'
+      - name: ouput information
+        run: |
+          echo "caching name ${{steps.caching.outputs.used-cache}}"
       - name: Run tests
         continue-on-error: true
         id: run-tests
         run: npm run test
       - name: upload test report
         uses: actions/upload-artifact@v3
-        id: caching
         with:
           name: test-report
           path: test.json
-      - name: ouput information
-        run: |
-          echo "caching name ${{steps.caching.outputs.sss}}"
       - name: build website
         run: npm run build
       - name: publish output
