@@ -27,6 +27,8 @@ jobs:
           node-version: 18
       - name: load & cahce dependencies
         uses: ./.github/actions/cache-deps
+        with:
+          caching: 'false'
       - name: Run tests
         continue-on-error: true
         id: run-tests
