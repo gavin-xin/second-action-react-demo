@@ -102,6 +102,11 @@ jobs:
     steps:
       - name: print result
         run: echo "${{needs.reusing.outputs.result}}"
+  javascript:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run java script action
+        uses: ./.github/actions/deploy-s3-javascript
 
 
 
