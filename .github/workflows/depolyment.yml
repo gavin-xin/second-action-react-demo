@@ -108,6 +108,7 @@ jobs:
       - name: Get code
         uses: actions/checkout@v4
       - name: Run java script action
+        id: javascript
         uses: ./.github/actions/deploy-s3-javascript
         env:
           AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY}}
@@ -116,6 +117,9 @@ jobs:
           bucket-name:  tf-gavin-test-ghr
           bucket-region: ap-northeast-1
           dist-folder: test
+      - name: output website url
+        run: |
+          echo '${{steps.javascript.outputs.website-url}}' 
 
 
 

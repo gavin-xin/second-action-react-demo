@@ -11,6 +11,9 @@ inputs:
   dist-folder:
     discription: 'the forlder need to upload to s3'
     required: true
+outputs:
+  website-url:
+    description: 'the url of the website'
 runs:
   using: 'node20'
   main: 'index.js'

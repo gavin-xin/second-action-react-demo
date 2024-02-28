@@ -19,6 +19,8 @@ function run() {
 
     core.notice('hello from my javascript action !!!')
 
+    core.setOutput("website-url", 'https://google.com')
+
 }
 
 run();
