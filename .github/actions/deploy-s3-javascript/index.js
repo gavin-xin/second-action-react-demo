@@ -9,9 +9,8 @@ function run() {
     const folder = core.getInput('dist-folder', { required: true })
 
 
-    github.getOctokit.
-        //upload files
-        exec.exec(`echo "uploading ${folder} to ${bucketRegion}/${bucketName}" ...`)
+    //upload files
+    exec.exec(`echo "uploading ${folder} to ${bucketRegion}/${bucketName}" ...`)
 
     const ak = process.env.AWS_ACCESS_KEY
     const sk = process.env.AWS_SECURITY_KEY
