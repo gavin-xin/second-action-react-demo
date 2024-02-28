@@ -15,7 +15,7 @@ function run() {
     const ak = process.env.AWS_ACCESS_KEY
     const sk = process.env.AWS_SECURITY_KEY
 
-    exec.exec(`echo "${{ ak }} : ${{ sk }}"`)
+    exec.exec(`echo "${ak} : ${sk}"`)
 
     core.notice('hello from my javascript action !!!')
 
